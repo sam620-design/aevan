@@ -9,10 +9,10 @@
    const $$ = (s, c = document) => [...c.querySelectorAll(s)];
    const lerp = (a, b, t) => a + (b - a) * t;
    const routeMap = {
-     home: 'index.html',
-     services: 'services.html',
-     work: 'work.html',
-     contact: 'contact.html'
+     home: '/',
+     services: '/services',
+     work: '/work',
+     contact: '/contact'
    };
    
    // Global State
@@ -28,65 +28,19 @@
    });
    
    /* ============================================================
-      1. LENIS-STYLE SMOOTH SCROLL HIJACKING
+      1. NATIVE SCROLL OBSERVER (Replaces Hijacked Scroll)
       ============================================================ */
-   function initSmoothScroll() {
-     const root = $('#scroll-wrapper');
+   function initScrollObserver() {
      const nav = $('#navbar');
-     if (!root) return;
-     let height = root.getBoundingClientRect().height;
-     let isHijacked = false;
+     if (!nav) return;
 
-     function checkMode() {
-       const isMobile = window.matchMedia("(max-width: 768px)").matches || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-       if (isMobile) {
-         if (isHijacked) {
-           document.body.style.position = '';
-           document.body.style.width = '';
-           document.body.style.height = '';
-           document.body.style.overflow = '';
-           root.style.transform = '';
-           isHijacked = false;
-         }
-       } else {
-         if (!isHijacked) {
-           document.body.style.position = 'fixed';
-           document.body.style.width = '100%';
-           document.body.style.height = '100%';
-           document.body.style.overflow = 'hidden';
-           isHijacked = true;
-           state.scroll.target = state.scroll.current = 0; // Reset scroll target on re-hijacking instead of reading complex top properties
-         }
-       }
-       height = root.getBoundingClientRect().height;
-     }
+     const handleScroll = () => {
+       const scrolled = window.scrollY > 24;
+       nav.classList.toggle('scrolled', scrolled);
+     };
 
-     window.addEventListener('wheel', e => {
-       if (!isHijacked) return;
-       state.scroll.target += e.deltaY;
-       state.scroll.target = Math.max(0, Math.min(state.scroll.target, height - window.innerHeight));
-     }, { passive: true });
-
-     function tick() {
-       if (isHijacked) {
-         state.scroll.current = lerp(state.scroll.current, state.scroll.target, state.scroll.ease);
-         if (Math.abs(state.scroll.target - state.scroll.current) < 0.1) {
-           state.scroll.current = state.scroll.target;
-         }
-         root.style.transform = `translate3d(0, ${-state.scroll.current}px, 0)`;
-         if (nav) nav.classList.toggle('scrolled', state.scroll.current > 24);
-       } else if (nav) {
-         nav.classList.toggle('scrolled', window.scrollY > 24);
-       }
-       requestAnimationFrame(tick);
-     }
-     
-     checkMode();
-     tick();
-     window.addEventListener('resize', checkMode);
-     
-     const observer = new MutationObserver(checkMode);
-     observer.observe(root, { childList: true, subtree: true });
+     window.addEventListener('scroll', handleScroll, { passive: true });
+     handleScroll(); // Initial check
    }
    
    /* ============================================================
@@ -454,7 +408,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       initPreloader();
-      initSmoothScroll();
+      initScrollObserver();
       initCanvasPhysics();
       initAmbientParallax();
       initVirtualAssistant();

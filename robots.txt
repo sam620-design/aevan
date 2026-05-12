@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aevandigital.com/sitemap.xml
+Sitemap: https://aevan.vercel.app/sitemap.xml
