@@ -386,8 +386,36 @@
   }
    
    /* ============================================================
-      BOOTSTRAP
-      ============================================================ */
+     8. SITE PROTECTION ENGINE (Anti-Copy/Anti-Theft)
+     ============================================================ */
+  function initSiteProtection() {
+    // Disable Right-Click
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Disable Key Combinations
+    document.addEventListener('keydown', e => {
+      // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S, Ctrl+C
+      if (
+        e.keyCode === 123 || // F12
+        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // I, J, C
+        (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 67)) // U, S, C
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Disable Image Dragging
+    document.addEventListener('dragstart', e => {
+      if (e.target.tagName === 'IMG') e.preventDefault();
+    });
+
+    console.log("%cAevan Digital — System Protected", "color: #4d9fff; font-size: 20px; font-weight: bold;");
+  }
+
+  /* ============================================================
+     BOOTSTRAP
+     ============================================================ */
     function initPreloader() {
       const preloader = $('#preloader');
       if (!preloader) return;
@@ -416,6 +444,7 @@
       initActiveNavigation();
       initContactForm();
       initMobileMenu();
+      initSiteProtection();
       splitTextAnimations();
       initRevealAnimations();
       initMagneticButtons();
