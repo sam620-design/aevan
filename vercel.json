@@ -2,6 +2,64 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" }
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/work",
+      "destination": "/work.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/owner-analytics",
+      "destination": "/owner-analytics.html"
+    },
+    {
+      "source": "/commission-engine",
+      "destination": "/commission-engine.html"
+    },
+    {
+      "source": "/ayur-cure-daily",
+      "destination": "/ayur-cure-daily.html"
+    },
+    {
+      "source": "/eduflow-lms",
+      "destination": "/eduflow-lms.html"
+    },
+    {
+      "source": "/meditrack-pro",
+      "destination": "/meditrack-pro.html"
+    },
+    {
+      "source": "/swiftshop-x",
+      "destination": "/swiftshop-x.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        }
+      ]
+    }
   ]
 }
