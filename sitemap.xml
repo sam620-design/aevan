@@ -1,75 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://www.aevandigital.com/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-05-12</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/services</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/work</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/contact</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/owner-analytics</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/commission-engine</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/ayur-cure-daily</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/eduflow-lms</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/meditrack-pro</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/swiftshop-x</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/privacy</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
   <url>
     <loc>https://www.aevandigital.com/terms</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
 </urlset>
